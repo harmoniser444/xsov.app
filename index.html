@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -290,22 +292,24 @@ XSOV is converted back to SOV by sending it to the XSOV smart-contract. The XSOV
     <h6 class="text-light">If you are having issues, try changing the node</h6>
     <br>
     <br>
-</div>
-<div class="d-flex justify-content-center">
-<button class="btn mdb-color lighten-4 text-dark z-depth-3" style="width: 300px" type="button" onclick="changeNode()">Change Node</button>
-</div>
-<div class="d-flex justify-content-center">
-<select id="scatterHost" class="text-center browser-default custom-select" type="text"style="max-width: 300px">
-  <option value="api.main.alohaeos.com" selected>api.main.alohaeos.com</option>
-  <option value="eos.greymass.com">eos.greymass.com</option>
-  <option value="api.eosdetroit.io">api.eosdetroit.io</option>
-  <option value="api.eosn.io">api.eosn.io</option>
-  <option value="api.eosmetal.io">api.eosmetal.io</option>
-  <option value="api.eoslaomao.com">api.eoslaomao.com</option>
-  <option value="api.eoseoul.io">api.eoseoul.io</option>
-  <option value="eu.eosdac.io">eu.eosdac.io</option>
-</select>
-</div>
+    <!--node changing button / input area-->
+      <div id="node_container" class="container bg-dark border border-primary rounded mb-2 shadow">
+          <div class="p-1 m-0">
+              <div class="input-group align-items-center">
+                  <div class="custom-control custom-checkbox m-4 p-2">
+                      <input type='checkbox' class="custom-control-input" id='roaming_checkbox' onclick='switch_roamingNodes(this)'>
+                      <label class="text-light custom-control-label" for='roaming_checkbox' style='font-size:16px;'>Roam</label>
+                  </div>
+                  <input id='scatter_host' class="align-items-center text-center form-control" type='text' aria-describedby="basic-addon1" value='' readonly>
+                  <div class="input-group-prepend">
+                      <button id="node_button" class="btn btn-primary" type="button" onclick="roamNode()">Switch</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="node_info" class="container bg-dark border border-success rounded m-0 p-1 text-center text-success">...</div>
+      <br>
+      <!-- end of node changing button / input area -->
 
 
 
@@ -321,3 +325,6 @@ XSOV is converted back to SOV by sending it to the XSOV smart-contract. The XSOV
 
 
   
+
+
+
